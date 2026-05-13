@@ -7,7 +7,8 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 # 2. Activate uv (add to current session PATH)
 $env:PATH = "$env:USERPROFILE\.local\bin;$env:PATH"
 
-# 3. Init current folder and pin Python 3.13
+# 3. Install Python 3.13 and init current folder
+uv python install 3.13
 uv init --python 3.13 .
 
 # 4. Add required packages

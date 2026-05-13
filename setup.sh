@@ -7,7 +7,8 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 # 2. Activate uv (add to current shell PATH)
 export PATH="$HOME/.local/bin:$PATH"
 
-# 3. Init current folder and pin Python 3.13
+# 3. Install Python 3.13 and init current folder
+uv python install 3.13
 uv init --python 3.13 .
 
 # 4. Add required packages
