@@ -10,7 +10,8 @@ export PATH="$HOME/.local/bin:$PATH"
 # 3. Install Python 3.13, init if needed, then ensure all packages are present
 uv python install 3.13
 if [ -f pyproject.toml ]; then
-    echo "pyproject.toml found, skipping init..."
+    echo "pyproject.toml found, syncing..."
+    uv sync
 else
     uv init --python 3.13 .
 fi

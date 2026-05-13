@@ -10,7 +10,8 @@ $env:PATH = "$env:USERPROFILE\.local\bin;$env:PATH"
 # 3. Install Python 3.13, init if needed, then ensure all packages are present
 uv python install 3.13
 if (Test-Path pyproject.toml) {
-    Write-Host "pyproject.toml found, skipping init..."
+    Write-Host "pyproject.toml found, syncing..."
+    uv sync
 } else {
     uv init --python 3.13 .
 }
